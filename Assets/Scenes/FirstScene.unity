@@ -279,6 +279,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   endRoom: {fileID: 0}
+  maxStemp: 0
   rooms: []
 --- !u!4 &1979592828
 Transform:
