@@ -46,6 +46,7 @@ public class RoomCreator : MonoBehaviour
 
     public int maxStemp;     //最远房间的步数
 
+
     //房间列表
     public List<Room> rooms = new List<Room>();
     private void Start()
@@ -185,4 +186,7 @@ public class RoomCreator : MonoBehaviour
             endRoom = farRooms[Random.Range(0, farRooms.Count)];
         }
     }
-} 
+
+}
+
+
