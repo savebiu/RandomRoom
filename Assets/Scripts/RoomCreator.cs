@@ -45,6 +45,8 @@ public class RoomCreator : MonoBehaviour
     List<GameObject> oneDoorRooms = new List<GameObject>();     //最远房间 与上一房间 间只有一个门的房间列表
 
     public int maxStemp;     //最远房间的步数
+    //墙壁列表
+    public WallList wallList;
 
 
     //房间列表
@@ -135,6 +137,78 @@ public class RoomCreator : MonoBehaviour
         newRoom.roomRight = Physics2D.OverlapCircle(roomPosition + new Vector3(xOffset, 0, 0), 0.2f, roomLayer);
 
         newRoom.RoomUpdate();
+        
+        //判断几个门
+        switch (newRoom.doorNumber)
+        {
+            case 1:
+                if (newRoom.roomUp)
+                {
+                    Instantiate(wallList.singD, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomDown)
+                {
+                    Instantiate(wallList.singU, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomLeft)
+                {
+                    Instantiate(wallList.singR, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomRight)
+                {
+                    Instantiate(wallList.singL, roomPosition, Quaternion.identity);
+                }
+                break;
+            case 2:
+                if (newRoom.roomUp && newRoom.roomDown)
+                {
+                    Instantiate(wallList.doubleUD, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomLeft && newRoom.roomRight)
+                {
+                    Instantiate(wallList.doubleLR, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomUp && newRoom.roomLeft)
+                {
+                    Instantiate(wallList.doubleLU, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomUp && newRoom.roomRight)
+                {
+                    Instantiate(wallList.doubleUR, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomDown && newRoom.roomLeft)
+                {
+                    Instantiate(wallList.doubleLD, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomDown && newRoom.roomRight)
+                {
+                    Instantiate(wallList.doubleRD, roomPosition, Quaternion.identity);
+                }
+                break;
+            case 3:
+                if (newRoom.roomUp && newRoom.roomLeft && newRoom.roomRight)
+                {
+                    Instantiate(wallList.tripleLUR, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomUp && newRoom.roomLeft && newRoom.roomDown)
+                {
+                    Instantiate(wallList.tripleLUD, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomUp && newRoom.roomRight && newRoom.roomDown)
+                {
+                    Instantiate(wallList.tripleURD, roomPosition, Quaternion.identity);
+                }
+                if (newRoom.roomLeft && newRoom.roomRight && newRoom.roomDown)
+                {
+                    Instantiate(wallList.tripleLRD, roomPosition, Quaternion.identity);
+                }
+                break;
+            case 4:
+                Instantiate(wallList.fourDoors, roomPosition, Quaternion.identity);
+                break;
+            
+        }
+
 
     }
 
@@ -187,6 +261,15 @@ public class RoomCreator : MonoBehaviour
         }
     }
 
+}
+//墙壁列表类
+[System.Serializable]
+public class WallList
+{
+    public GameObject singL, singR, singU, singD,
+        doubleLR, doubleLU, doubleLD, doubleUR, doubleUD, doubleRD,
+        tripleLUR, tripleLUD, tripleURD, tripleLRD,
+        fourDoors;
 }
 
 

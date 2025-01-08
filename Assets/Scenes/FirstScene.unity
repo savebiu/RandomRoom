@@ -278,8 +278,24 @@ MonoBehaviour:
   roomLayer:
     serializedVersion: 2
     m_Bits: 64
-  endRoom: {fileID: 0}
+  endRoom: {fileID: 4557324913040286407, guid: 2d849802675399948ad828791fd75a2a, type: 3}
   maxStemp: 0
+  wallList:
+    singL: {fileID: 2872279215865782921, guid: e0772d8ff9f916b4188637af7da043c3, type: 3}
+    singR: {fileID: 2872279215865782921, guid: 6372e55b0c61794478c253acc9b7b552, type: 3}
+    singU: {fileID: 2872279215865782921, guid: 512735b236ddde144b2b6c1da4def68e, type: 3}
+    singD: {fileID: 2872279215865782921, guid: 332c171195f1ae740abc7bf9dad429b2, type: 3}
+    doubleLR: {fileID: 2872279215865782921, guid: 10fd7560f80c8ec4b8c6afdab284f828, type: 3}
+    doubleLU: {fileID: 2872279215865782921, guid: f11af0459dd47df45b3e9181bcd42b5f, type: 3}
+    doubleLD: {fileID: 8672009502073194354, guid: b1ab1814b854e20419ecdc2ae81076fa, type: 3}
+    doubleUR: {fileID: 2872279215865782921, guid: 2f68e9a84284c12439af0765a34cc765, type: 3}
+    doubleUD: {fileID: 2872279215865782921, guid: ce2fb5fa13149ee478a9df66572e5dd5, type: 3}
+    doubleRD: {fileID: 2872279215865782921, guid: f59d553eed16cab43a87cdfcd1ebfb13, type: 3}
+    tripleLUR: {fileID: 2872279215865782921, guid: 75de0bf5c086ab64ca4af6601117115e, type: 3}
+    tripleLUD: {fileID: 2872279215865782921, guid: 975b5759099c06b40a7d4b9e67f89b0f, type: 3}
+    tripleURD: {fileID: 2872279215865782921, guid: b63e18e05c5bbc04c8862f984b3911e2, type: 3}
+    tripleLRD: {fileID: 2872279215865782921, guid: 975b5759099c06b40a7d4b9e67f89b0f, type: 3}
+    fourDoors: {fileID: 2872279215865782921, guid: d172ea35945acaa4f819e5007c8becef, type: 3}
   rooms: []
 --- !u!4 &1979592828
 Transform:
